@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ng28 · 稳定访问与平台导览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f0f2f5;
+      color: #1e1e2a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ——— hero ——— */
+    .hero {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e4e7ed;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%);
+      border-radius: 24px 24px 0 0;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #4b5563;
+      border-left: 3px solid #8b5cf6;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ——— 卡片网格 ——— */
+    .grid {
+      display: grid;
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #e2e6ed;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .card .label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #6b7280;
+      background: #f3f4f6;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      margin-top: 1rem;
+    }
+
+    /* ——— 链接句子区域 ——— */
+    .link-block {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e2e6ed;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      font-size: 1.05rem;
+      color: #1f2937;
+    }
+
+    .link-block a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.25);
+      transition: border-color 0.2s;
+    }
+
+    .link-block a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* ——— FAQ 摘要 ——— */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e2e6ed;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .faq-mini h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #eef1f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .faq-item .a {
+      color: #4b5563;
+      margin-top: 0.15rem;
+      font-size: 0.9rem;
+    }
+
+    /* ——— footer ——— */
+    .footer-note {
+      margin-top: auto;
+      text-align: center;
+      padding: 1.5rem 0 0.2rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      border-top: 1px solid #dce0e8;
+    }
+
+    .footer-note small {
+      display: block;
+      margin-top: 0.2rem;
+      color: #9ca3af;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce0e8;
+      margin: 1rem 0;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .link-block {
+        padding: 1.4rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- hero -->
+    <div class="hero">
+      <h1>ng28 · 使用指引</h1>
+      <div class="sub">稳定入口与页面说明 · 面向日常访问的场景梳理</div>
+    </div>
+
+    <!-- 三段自然介绍卡片 -->
+    <div class="grid">
+      <div class="card">
+        <h2>📌 平台背景</h2>
+        <p>从域名结构到服务响应，<strong>ng28</strong> 一直保持清晰的定位与稳定的访问路径。本站点提供直接的页面入口，无需频繁切换地址即可获取一致体验。日常维护与线路调整均有公告同步，信息透明。</p>
+        <span class="label">基础说明</span>
+      </div>
+      <div class="card">
+        <h2>⚙️ 访问特性</h2>
+        <p>页面加载采用标准 HTTPS 协议，保证数据传输基础安全。同时针对不同网络环境做了兼容处理，减少因地域或运营商差异导致的延迟。推荐使用主流浏览器获得最佳显示效果。</p>
+        <span class="label">技术概述</span>
+      </div>
+      <div class="card">
+        <h2>📋 使用场景</h2>
+        <p>适用于日常信息浏览、账户登录、功能查询等常规操作。无论是桌面端还是移动设备，页面均自适应排版，交互流程简洁。建议收藏常用链接，避免误入第三方仿冒页面。</p>
+        <span class="label">实用建议</span>
+      </div>
+    </div>
+
+    <!-- 嵌入链接的自然句子块 -->
+    <div class="link-block">
+      <p>若需直接前往服务页面，可记住主域 <a href="https://office-ng28.com">ng28</a> 作为稳定入口。该域名长期指向同一服务主体，无需额外跳转。日常使用时请核对地址栏信息，确保访问的是官方来源。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>📖 常见疑问摘要</h3>
+      <div class="faq-item">
+        <div class="q">问：为什么推荐直接输入主域？</div>
+        <div class="a">主域避免搜索时误入不相关页面。将 <a href="https://office-ng28.com" style="color:#2563eb;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(37,99,235,0.25);">ng28</a> 存入书签是最直接的保留方式。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">问：页面访问速度受哪些因素影响？</div>
+        <div class="a">本地网络、DNS 解析、运营商路由均有影响。建议使用公共 DNS 或重启路由后再试，多数情况可恢复正常。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">问：是否需要频繁更换入口？</div>
+        <div class="a">不需要。当前域名保持长期有效，如有调整会通过站内公告提前告知。请以官方发布信息为准。</div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+      <span>本页为介绍性说明，内容仅供信息参考。</span>
+      <small>页面版本 · 2025</small>
+    </div>
+  </div>
+</body>
+</html>
