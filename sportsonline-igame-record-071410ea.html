@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 体育在线专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f9fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-wrap {
+            max-width: 720px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2.8rem 0;
+            flex: 1;
+        }
+
+        /* hero 横幅 —— 杂志风格留白 */
+        .hero {
+            background: #eef3f8;
+            padding: 3rem 2rem 2.5rem;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 20, 30, 0.03);
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #0b1a2b;
+            margin-bottom: 0.7rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #4b5b6b;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .hero .muted-line {
+            margin-top: 1.6rem;
+            font-size: 0.85rem;
+            color: #6b7b8b;
+            border-top: 1px solid #dce3ea;
+            padding-top: 1.6rem;
+            display: inline-block;
+            width: 80%;
+        }
+
+        /* 正文区块 */
+        .section-card {
+            background: white;
+            padding: 2rem 2rem 2.4rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            margin-bottom: 1.8rem;
+            border: 1px solid #eaeef3;
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #142638;
+            border-left: 4px solid #3b7a9e;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-card p {
+            margin-bottom: 1rem;
+            color: #2e3f4f;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .em-list {
+            list-style: none;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .em-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #2c3d4e;
+        }
+
+        .em-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #3b7a9e;
+            font-weight: 400;
+        }
+
+        .inline-highlight {
+            background: #eaf2f9;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 450;
+        }
+
+        /* 页尾访问提示 */
+        .visit-footer {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dce3ea;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3c4d5e;
+        }
+
+        .visit-footer a {
+            color: #1b5a7a;
+            text-decoration: none;
+            border-bottom: 1px solid #9bb9cf;
+            font-weight: 480;
+            transition: border 0.2s;
+        }
+
+        .visit-footer a:hover {
+            border-bottom: 2px solid #1b5a7a;
+        }
+
+        .faq-compact {
+            margin-top: 2rem;
+            padding: 1.8rem 2rem;
+            background: #f4f7fa;
+            border-radius: 20px;
+            border: 1px solid #e2e9f0;
+        }
+
+        .faq-compact summary {
+            font-weight: 480;
+            cursor: pointer;
+            color: #1b2f41;
+            padding: 0.3rem 0;
+        }
+
+        .faq-compact details {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-compact details p {
+            margin: 0.4rem 0 0.8rem 1rem;
+            color: #3a4d5e;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 580px) {
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .page-wrap {
+                width: 92%;
+                padding: 1.8rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- hero 横幅：杂志式头图，介绍站点性质 -->
+    <div class="hero">
+        <h1>体育在线 · 爱游戏</h1>
+        <div class="sub">
+            一份关于站点背景、内容方向与可信度的整理说明
+        </div>
+        <div class="muted-line">
+            持续关注体育赛事与游戏文化的交汇地带
+        </div>
+    </div>
+
+    <!-- 第一段：站点介绍与背景说明 -->
+    <div class="section-card">
+        <h2>站点定位与初衷</h2>
+        <p>
+            <strong>爱游戏</strong> 并不是一个突变的产物。它更像是长期观察体育直播与电子游戏交互生态之后，慢慢形成的信息节点。无论你是因为体育赛事直播的便利性而来，还是对游戏化观赛体验感到好奇，这个站点都试图提供一条相对清晰的路径——把散落在各处的资源、赛程与社区讨论，整理成更容易翻阅的形式。
+        </p>
+        <p>
+            网站内容主要围绕主流体育赛事（足球、篮球、网球、电竞项目等）的在线观看信息，同时兼顾游戏化互动、实时比分聚合以及相关文化解读。不夸大功能，也不虚构数据，每一则更新都基于可查的来源或持续测试。
+        </p>
+    </div>
+
+    <!-- 第二段：可信说明与特点（自然融入杂志笔调） -->
+    <div class="section-card">
+        <h2>可信度与内容原则</h2>
+        <p>
+            在信息过载的时代，一个体育游戏类网站最容易被怀疑的就是链接有效性、时效性以及是否夹带诱导。因此 <a href="https://sportsonline-igame.com" class="inline-highlight">爱游戏</a> 在内部一直坚持三项原则：<strong>来源可溯</strong>（每个推荐或汇总均标注参考来源或测试时间）、<strong>界面克制</strong>（不滥用弹窗、不伪装按钮）、<strong>更新留痕</strong>（页面底部或专页会记录最近更新日期）。这不是营销话术，而是运行过程中逐步形成的习惯。
+        </p>
+        <p>
+            另外，站点不参与任何形式的版权流媒体分发，只提供指向官方或授权转播平台的外部链接，以及社区合法公开的信息聚合。这一点在关于页面中有更详细的合规说明。
+        </p>
+        <ul class="em-list">
+            <li>每周至少校验一次核心赛事链接</li>
+            <li>游戏板块内容与体育直播分开索引，避免混淆</li>
+            <li>用户提交的反馈与纠正会在两个工作日内核查</li>
+        </ul>
+    </div>
+
+    <!-- 第三段：场景与典型用法（自然带出FAQ摘要） -->
+    <div class="section-card">
+        <h2>常见使用场景</h2>
+        <p>
+            许多访问者是在比赛前半小时打开站点，快速找到对应联赛的观赛入口；也有部分用户习惯在周末浏览「赛事+游戏活动」的混合日历。站点没有强制注册或付费模块，所有聚合信息均免费可见。
+        </p>
+        <p>
+            如果你首次接触 <a href="https://sportsonline-igame.com">爱游戏</a>，可以试着从导航栏的「本周赛历」或「热门游戏直播」板块开始。界面以文字列表为主，加载速度较快，没有自动播放的视频或声音。
+        </p>
+        <!-- FAQ 摘要：以折叠形式嵌入，不刻意独立成章 -->
+        <div class="faq-compact">
+            <details>
+                <summary>⚡ 站点链接稳定吗？会不会频繁失效？</summary>
+                <p>我们会对展示的链接做定期抽检，但外部转播源有时会变动，如果发现失效可以通过页面底部的反馈渠道告知，通常隔天会更新或替换。</p>
+            </details>
+            <details>
+                <summary>📅 是否包含所有体育项目？</summary>
+                <p>主要集中在足球、篮球、网球以及部分电竞赛事。小众联赛覆盖程度较低，但会根据访问需求逐步补充。</p>
+            </details>
+            <details>
+                <summary>🔒 需要注册或下载软件吗？</summary>
+                <p>不需要。所有内容均为网页直接访问，不要求注册、下载或安装任何程序。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示：自然嵌入爱游戏链接 -->
+    <div class="visit-footer">
+        <p>
+            若你想直接了解站点全貌，可以前往 <a href="https://sportsonline-igame.com">爱游戏</a> 首页浏览最新赛程与游戏专题。
+        </p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #6b7b8b;">
+            本页为独立介绍，内容经整理后形成，不作为官方声明。
+        </p>
+    </div>
+</div>
+</body>
+</html>
