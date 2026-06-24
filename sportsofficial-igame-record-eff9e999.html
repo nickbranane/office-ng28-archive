@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的游戏向导 · 爱游戏介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+      background-color: #f4f5f9;
+      color: #1e1e2a;
+      line-height: 1.7;
+    }
+
+    /* 深色头图——故事感开场 */
+    .hero {
+      background: linear-gradient(145deg, #11141f 0%, #212639 100%);
+      color: #e8eaf0;
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: #f4f5f9;
+      border-radius: 0 0 50% 50% / 0 0 20px 20px;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-short {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: #adbed8;
+      margin-bottom: 0.75rem;
+      font-weight: 300;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: #d1b17e;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #bcc6db;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      font-weight: 300;
+    }
+
+    /* 浅色正文区 */
+    .content {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3.5rem;
+    }
+
+    .intro p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .intro a {
+      color: #946b3d;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #946b3d;
+      transition: border 0.2s, color 0.2s;
+    }
+
+    .intro a:hover {
+      color: #6d4c26;
+      border-bottom: 1px solid #6d4c26;
+    }
+
+    /* 特点卡片 —— 温和排列 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2.5rem 0 1.8rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      flex: 1 1 220px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s, box-shadow 0.2s;
+      border: 1px solid #eaeef4;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .feature-card h3 .icon {
+      display: inline-block;
+      margin-right: 6px;
+      color: #b58a5a;
+    }
+
+    .feature-card p {
+      font-size: 0.97rem;
+      color: #3a404e;
+      line-height: 1.6;
+    }
+
+    /* 温和结尾区域 */
+    .gentle-closing {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d8dde8;
+    }
+
+    .gentle-closing p {
+      margin-bottom: 1rem;
+    }
+
+    .gentle-closing a {
+      color: #946b3d;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #946b3d;
+    }
+
+    .gentle-closing a:hover {
+      color: #6d4c26;
+      border-bottom: 1px solid #6d4c26;
+    }
+
+    .cta-soft {
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: transparent;
+      border: 1px solid #b58a5a;
+      color: #946b3d;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-soft:hover {
+      background: #946b3d;
+      color: #ffffff;
+      border-color: #946b3d;
+    }
+
+    .faq-summary {
+      margin: 2rem 0 1rem;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eaeef4;
+    }
+
+    .faq-summary details {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-summary summary {
+      font-weight: 500;
+      color: #2d3748;
+      cursor: pointer;
+      padding: 0.3rem 0;
+    }
+
+    .faq-summary summary::-webkit-details-marker {
+      color: #b58a5a;
+    }
+
+    .faq-summary p {
+      margin: 0.6rem 0 0.2rem 1.2rem;
+      color: #3a404e;
+      font-size: 0.98rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-short {
+        font-size: 1rem;
+      }
+
+      .feature-card {
+        flex: 1 1 100%;
+      }
+
+      .content {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      .faq-summary {
+        padding: 1rem 1.2rem;
+      }
+
+      .cta-soft {
+        padding: 0.3rem 1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 4.5rem 2rem 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-short">寻找一处安心的游戏起点</div>
+      <h1 class="hero-title">在<span>爱游戏</span>，看见纯粹乐趣</h1>
+      <p class="hero-sub">一个让浏览更明朗、发现更从容的地方——这就是我们对它的期待。</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <section class="intro">
+      <p>
+        你可能已经注意到，如今打开一个网站常常需要先分辨它究竟是内容平台、推广页面还是工具入口。
+        而当你来到 <a href="https://sportsofficial-igame.com">爱游戏</a>，我们希望你能立刻感受到一种安静的确信——这里就是你想快速了解游戏信息时会想起来的地方。
+        它不喧哗、不伪装，只是平实地把内容呈现出来。
+      </p>
+      <p>
+        很多人第一次访问时，都会有一个相似的感觉：页面结构清晰，没有什么多余的干扰。你不需要费力地寻找导航或翻找隐藏菜单。对于只是想简单确认某个信息、了解游戏大致面貌的用户来说，这种直接感很珍贵。
+      </p>
+    </section>
+
+    <!-- 特点列表 -->
+    <section class="feature-grid">
+      <div class="feature-card">
+        <h3><span class="icon">✦</span>一目了然的结构</h3>
+        <p>分类与条目都非常直接，几乎没有冗长的引导。你可以在很短时间内找到自己关心的内容，不会被层层折叠的菜单分散注意力。</p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="icon">✦</span>聚焦信息本身</h3>
+        <p>页面上的文字和说明都保持着一种平和的语调。它不会刻意催促你做什么，而是安静地等待你发现感兴趣的部分。</p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="icon">✦</span>细节上的流畅</h3>
+        <p>从加载到浏览，每一步都没有突兀的跳转或令人困惑的弹窗。阅读体验连贯，就像翻看一本排版舒适的简册。</p>
+      </div>
+    </section>
+
+    <p style="margin-top: 0.5rem;">
+      当然，每个网站都有自己的成长轨迹。目前 <a href="https://sportsofficial-igame.com">爱游戏</a> 所展示出的克制与清晰，已经让很多初次拜访的人感到放松。如果你恰好也喜欢在安静的页面里寻找答案，不妨将它放进你的日常浏览列表。
+    </p>
+
+    <!-- FAQ 摘要片段 -->
+    <div class="faq-summary">
+      <details>
+        <summary>「爱游戏」这个名字听起来很宽泛，它具体包含什么？</summary>
+        <p>实际上，它更接近一个信息聚合与展示的窗口，主要围绕游戏相关内容的介绍与索引。你可以把它看作一个指引型页面，而非大型门户。它的价值在于让你迅速了解某些游戏或主题的概况。</p>
+      </details>
+      <details>
+        <summary>访问时需要注意什么吗？</summary>
+        <p>不需要任何特殊设置。所有内容都可以直接在浏览器中查看。页面没有强制注册或下载的要求，你只需带着好奇心来就好。</p>
+      </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-closing">
+      <p>
+        互联网上有数不清的网站，每一个都想在最初几秒抓住你。<a href="https://sportsofficial-igame.com">爱游戏</a> 选择了另一条路——它更希望你在安静浏览之后，自己决定是否要再回来。你可能会在某个午后，为了一个小小的游戏细节而打开它，然后发现，原来这里一直都有你需要的线索。
+      </p>
+      <p>
+        如果你还没有去过，或许现在是一个不错的时机。
+        <a href="https://sportsofficial-igame.com" class="cta-soft">爱游戏</a>
+      </p>
+      <p style="margin-top: 2rem; font-size: 0.9rem; color: #5f6575;">
+        —— 愿每一次点击都自然、不勉强。
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
