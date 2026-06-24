@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 稳定入口与页面说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      background-color: #f5f3ef;
+      color: #2d2a24;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: #1a1c1e;
+      color: #eae6df;
+      padding: 5.5rem 2rem 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c7a46b, #e0c28a, #c7a46b);
+      opacity: 0.6;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+      font-family: "Times New Roman", serif;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      opacity: 0.85;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* 正文区 */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.2rem 1.8rem 4rem 1.8rem;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 2.2rem 0 0.8rem 0;
+      color: #2f2b25;
+      border-bottom: 1px solid #ddd8cf;
+      padding-bottom: 0.4rem;
+    }
+
+    .content p {
+      margin-bottom: 1.4rem;
+      text-align: justify;
+    }
+
+    .content p.lead {
+      font-size: 1.1rem;
+      color: #403b33;
+      border-left: 4px solid #c7a46b;
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+      font-style: normal;
+    }
+
+    /* 引用提示块 */
+    .quote-note {
+      background: #ece9e2;
+      border-radius: 6px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.4rem 0;
+      border-left: 6px solid #9d875c;
+      font-size: 0.98rem;
+    }
+
+    .quote-note strong {
+      color: #4a3f2e;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #946b3a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #6f4f2a;
+      border-bottom-color: #6f4f2a;
+    }
+
+    /* 访问句——温和提示 */
+    .visit-sentence {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d6d0c6;
+      font-size: 0.98rem;
+      color: #4f483d;
+    }
+
+    .visit-sentence span {
+      background: #e7e2d9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+
+    /* 列表样式简介 */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.6rem 0 2rem 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0 0.5rem 1.6rem;
+      position: relative;
+    }
+
+    .feature-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #c7a46b;
+      font-weight: 300;
+    }
+
+    /* FAQ 摘要——极简 */
+    .faq-summary {
+      margin: 2rem 0 1.2rem 0;
+    }
+
+    .faq-summary details {
+      margin-bottom: 0.7rem;
+      padding: 0.6rem 0.8rem;
+      background: #f0ede7;
+      border-radius: 4px;
+      border: 1px solid #e0dad1;
+    }
+
+    .faq-summary summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: #3d372e;
+    }
+
+    .faq-summary details p {
+      margin: 0.6rem 0 0.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 3.5rem 1.2rem 3rem 1.2rem;
+      }
+
+      .content {
+        padding: 2rem 1.2rem 3rem 1.2rem;
+      }
+
+      .content h2 {
+        font-size: 1.3rem;
+      }
+
+      .quote-note {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero .sub {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>爱游戏</h1>
+  <div class="sub">一个稳定、可回访的页面入口 · 说明与索引</div>
+</header>
+
+<main class="content">
+
+  <p class="lead">
+    很多人需要一个安静的起点——不是弹窗，不是跳转，而是一段介绍和一条可靠的路。<br>
+    这个页面就是为此准备的。
+  </p>
+
+  <h2>页面说明 · 作为入口</h2>
+  <p>
+    网站地址有时会变动，但一些稳定的索引页可以长期保留。<strong>爱游戏</strong> 
+    这个站点在过去一段时间里被部分用户用作信息聚合与内容浏览的起点。如果你也恰好需要这样一个入口，
+    可以将此页收藏，或者直接记住域名。
+  </p>
+  <p>
+    这个页面的作用很简单：说明站点背景，提供直接访问的链接，以及一些常见问题的摘要。
+    没有复杂菜单，没有广告干扰，纯粹从使用角度出发。
+  </p>
+
+  <h2>站点特点简述</h2>
+  <ul class="feature-list">
+    <li>内容定位清晰，长期维护，更新节奏稳定</li>
+    <li>页面结构简洁，加载轻量，适合移动端与桌面端</li>
+    <li>不依赖第三方平台，独立域名长期使用</li>
+    <li>站内信息分类明确，便于回查与浏览</li>
+  </ul>
+
+  <div class="quote-note">
+    <strong>提示：</strong> 如果你之前通过其他方式访问过这个站点，可能会发现界面有所调整。
+    但核心入口没有变——<a href="https://sportsmobile-igame.com">爱游戏</a> 依然是最直接的地址。
+    建议在浏览器中添加到书签，方便以后回来。
+  </div>
+
+  <h2>常见理解 · 简短FAQ</h2>
+  <div class="faq-summary">
+    <details>
+      <summary>这个页面和爱游戏站点的关系？</summary>
+      <p>这个页面是入口页与介绍页，指向 <a href="https://sportsmobile-igame.com">爱游戏</a> 主站。
+      主站内容独立运作，此页仅作为稳定的访问说明与跳转辅助。</p>
+    </details>
+    <details>
+      <summary>为什么需要单独的入口页？</summary>
+      <p>部分用户习惯保留一个干净的说明页作为书签，避免直接暴露主站路径或需要记忆复杂链接。
+      同时入口页也提供了基本的介绍与FAQ，方便新访客快速了解。</p>
+    </details>
+    <details>
+      <summary>页面内容会更新吗？</summary>
+      <p>入口页会保持基本说明不变，但可能会根据站点调整做少量更新。
+      主要内容和动态仍以主站为准。</p>
+    </details>
+  </div>
+
+  <h2>适用场景</h2>
+  <p>
+    如果你打算向朋友推荐一个内容稳定的中文站点，或自己需要一个干净的访问锚点，
+    这个页面可以作为中转。直接打开浏览器输入 <a href="https://sportsmobile-igame.com">爱游戏</a> 就能看到主站内容，
+    不需要经过搜索或者第三方导航。
+  </p>
+  <p>
+    另外，对于一些希望减少干扰、快速定位站点的用户来说，入口页本身也是一个轻量的索引。
+    不需要登录，不需要关注，打开即用。
+  </p>
+
+  <div class="visit-sentence">
+    <span>📌</span> 你可以随时通过这个页面回到熟悉的位置。<br>
+    站点地址直接可访：<a href="https://sportsmobile-igame.com">爱游戏</a> —— 不加修饰，但足够稳定。
+  </div>
+
+</main>
+
+</body>
+</html>
