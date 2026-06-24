@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde8cd 0%, #fbc6a4 40%, #f7b586 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #3e2c1b;
+            line-height: 1.6;
+            padding: 30px 20px;
+        }
+
+        .page {
+            max-width: 780px;
+            width: 100%;
+            background: rgba(255, 250, 240, 0.68);
+            backdrop-filter: blur(4px);
+            border-radius: 64px 64px 40px 40px;
+            padding: 32px 28px 44px;
+            box-shadow: 0 20px 40px -12px rgba(120, 60, 20, 0.3);
+            transition: all 0.2s;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.7rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #4e2e14;
+            background: linear-gradient(to right, #7d4e2a, #b06d3a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding: 0 0 6px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #674829;
+            margin-top: 4px;
+            border-top: 2px solid #e8c7a6;
+            display: inline-block;
+            padding-top: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .card {
+            background: #fffaf3;
+            border-radius: 36px;
+            padding: 28px 26px;
+            margin-bottom: 26px;
+            box-shadow: 0 6px 16px rgba(100, 50, 10, 0.08);
+            border: 1px solid rgba(255, 215, 170, 0.3);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #5d3a1d;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p {
+            margin-bottom: 14px;
+            color: #3f2e1c;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 4px;
+            margin: 12px 0 6px;
+        }
+
+        .card li {
+            padding: 6px 0 6px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="%23b47b4f"><circle cx="12" cy="12" r="6"/></svg>') left center no-repeat;
+            background-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eddccb;
+            padding: 12px 0 10px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 520;
+            color: #4f321b;
+            margin-bottom: 4px;
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: #5a4230;
+        }
+
+        .link-sentence {
+            background: #fff5e8;
+            border-radius: 48px;
+            padding: 14px 22px;
+            margin: 24px 0 12px;
+            text-align: center;
+            border: 1px solid #ebcfb5;
+        }
+
+        .link-sentence a {
+            color: #b06d38;
+            font-weight: 550;
+            text-decoration: none;
+            background: #ffefe0;
+            padding: 6px 18px;
+            border-radius: 40px;
+            transition: background 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            margin: 0 6px;
+            border: 1px solid transparent;
+        }
+
+        .link-sentence a:hover {
+            background: #e4c4a8;
+            box-shadow: 0 4px 8px rgba(160, 90, 30, 0.15);
+            border-color: #caa888;
+        }
+
+        .bottom-links {
+            margin-top: 28px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7c624b;
+        }
+
+        .bottom-links a {
+            color: #8d623b;
+            text-decoration: none;
+            border-bottom: 1px dashed #c9aa8c;
+            padding-bottom: 2px;
+            margin: 0 8px;
+        }
+
+        .bottom-links a:hover {
+            border-bottom-style: solid;
+            color: #5f3d1f;
+        }
+
+        .footnote {
+            margin-top: 32px;
+            border-top: 1px solid #e3ceb9;
+            padding-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 22px;
+            font-size: 0.85rem;
+            color: #745f4b;
+        }
+
+        .footnote span {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 580px) {
+            .page {
+                padding: 20px 16px 30px;
+                border-radius: 32px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 20px 18px;
+                border-radius: 28px;
+            }
+
+            .link-sentence {
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero -->
+        <div class="hero">
+            <h1>爱游戏</h1>
+            <div class="tagline">体育资讯 · 简明访问指引</div>
+        </div>
+
+        <!-- 优势区 / 简明提醒 -->
+        <div class="card">
+            <h2>📋 使用前留意</h2>
+            <p>访问任何平台前，花一分钟了解基本设置能避免不少周折。对<a href="https://sportsportal-igame.com" style="color:#aa6d3b; text-decoration:underline; text-underline-offset:3px;">爱游戏</a>而言，熟悉页面布局、更新提醒和常用入口，会令后续浏览更顺畅。</p>
+            <p>以下是经常被问到的小贴士：</p>
+            <ul>
+                <li>建议使用最新版浏览器，并允许必要的脚本以正常显示内容。</li>
+                <li>部分功能（如实时比分、视频集锦）可能需要轻量级插件，按页面提示操作即可。</li>
+                <li>若遇到加载缓慢，可尝试刷新或切换网络环境，多数情况能快速恢复。</li>
+            </ul>
+        </div>
+
+        <!-- 说明区 / 场景与指南 -->
+        <div class="card">
+            <h2>🧭 探索方向与场景</h2>
+            <p><a href="https://sportsportal-igame.com" style="color:#aa6d3b; text-decoration:underline; text-underline-offset:3px;">爱游戏</a>聚合了多品类体育动态，从赛事预告、赛后分析到数据排行，覆盖日常观赛所需。对于刚接触的朋友，可以先从首页的「热门赛事」区域开始，快速了解当前焦点。</p>
+            <p>如果你偏爱深度内容，可以留意专题栏目——比如每周战术解读或运动员访谈，这些内容通常更新在固定板块。移动端适配也做得不错，通勤时浏览毫无压力。</p>
+            <p>另外，个人收藏或历史记录功能能帮你追踪感兴趣的比赛，不用每次都从头翻找。</p>
+        </div>
+
+        <!-- 说明区 / 访问习惯与效率 -->
+        <div class="card">
+            <h2>⏱️ 让访问更顺手</h2>
+            <p>养成几个小习惯，每次打开的体验都会更好：</p>
+            <ul>
+                <li>把常用页面（比如联赛积分榜）添加到书签，一步直达。</li>
+                <li>关注站内公告栏——那里会第一时间通知维护、改版或新功能上线。</li>
+                <li>利用搜索栏（通常位于页面顶部）直接查找球队、球员或关键词，比逐层菜单快得多。</li>
+            </ul>
+            <p style="margin-top:14px;">归根结底，一切设计都是为了让你用更少的时间找到想看的信息。保持平常心，慢慢就会发现其中的顺手之处。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="card">
+            <h2>❓ 常见疑问摘要</h2>
+            <div class="faq-item">
+                <div class="faq-question">页面显示不全怎么办？</div>
+                <div class="faq-answer">先检查网络连接，再尝试浏览器「无痕模式」或更换浏览器。如果问题持续，可在站点内反馈入口描述情况。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">需要注册才能浏览吗？</div>
+                <div class="faq-answer">大部分内容无需注册即可阅读。部分互动功能（如评论、收藏）可能需简单创建账号，过程很轻量。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">移动端和电脑端体验有差别吗？</div>
+                <div class="faq-answer">核心内容一致，只是布局会自适应。电脑端多列展示更丰富，移动端侧重单列流畅滑动。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">会推送比赛提醒吗？</div>
+                <div class="faq-answer">部分浏览器支持推送通知，你可以在设置中按兴趣开启。如果不希望被打扰，关闭即可。</div>
+            </div>
+        </div>
+
+        <!-- 嵌入句子 a 标签 -->
+        <div class="link-sentence">
+            如果你想直接前往，这是 <a href="https://sportsportal-igame.com">爱游戏</a> 的页面地址。
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="bottom-links">
+            <a href="https://sportsportal-igame.com">爱游戏</a>
+            <span style="color:#be9d82; margin:0 6px;">·</span>
+            <a href="#">常见问题</a>
+            <span style="color:#be9d82; margin:0 6px;">·</span>
+            <a href="#">网站地图</a>
+        </div>
+
+        <div class="footnote">
+            <span>简明指引 · 日常访问提醒</span>
+            <span>内容仅供参考，不构成承诺</span>
+        </div>
+    </div>
+</body>
+</html>
